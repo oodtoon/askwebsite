@@ -74,5 +74,10 @@
     .title {
       font-size: 30px;
     }
+
+    .title-img {
+      height: 150px;
+      width: 150px;
+    }
   }
 </style>

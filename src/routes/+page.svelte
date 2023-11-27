@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 </script>
 
 <div class="home-container">
@@ -7,6 +7,7 @@
     src="https://askpsychologicalservices.com/images/3cc98553e78333ece2ac284d66c46fbb.png"
     alt="ask-logo"
   />
+
   <h1 class="title">Your Journey Starts Here</h1>
   <div class="content">
     <p>
@@ -60,16 +61,13 @@
     padding: 2em;
     border-radius: 4px;
     text-align: center;
-    /* box-shadow: var(--ask-shadow); */
+    box-shadow: var(--ask-shadow);
     max-width: 800px;
     margin: auto;
     position: relative;
-    border-color: white;
-    border-style: double;
-    border-width: 20px;
   }
 
-  /* .content::before {
+  .content::before {
     content: "";
     position: absolute;
     background: transparent;
@@ -78,5 +76,25 @@
     right: 30px;
     bottom: 20px;
     border: 10px solid white;
-  } */
+    pointer-events: none;
+  }
+
+  @media (max-width: 420px) {
+    .home-container {
+      margin: 2em 1em;
+    }
+
+    .title-img {
+      width: 150px
+    }
+
+    .content { 
+      padding: 0 1em 0 .5em;
+    }
+
+    .content::before {
+      right: 10px;
+      bottom: 10px;
+    }
+  }
 </style>
