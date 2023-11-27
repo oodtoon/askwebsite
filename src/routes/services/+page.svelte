@@ -6,10 +6,20 @@
   import GroupCard from "$lib/components/GroupCard.svelte";
   import AltLearnMore from "$lib/components/icons/AltLearnMore.svelte";
   import Dots from "$lib/components/icons/Dots.svelte";
+  import couch from "$lib/images/couch.png";
+  import assessment from "$lib/images/assessment.png";
+  import groupChairs from "$lib/images/groupChairs.png";
+
+  let ind =
+    "https://askpsychologicalservices.com/images/3bb88b6d9eab8a6fcd867c13c954aaf2.jpg";
+  let grp =
+    "https://askpsychologicalservices.com/images/b1f68e2dab2cc0da80fb6219efb5afaa.jpg";
+  let assmt =
+    "https://askpsychologicalservices.com/images/a9a1ae111ba39e4862ad62421ae87336.jpg";
 
   const linkInfoList = [
     {
-      img: "https://askpsychologicalservices.com/images/3bb88b6d9eab8a6fcd867c13c954aaf2.jpg",
+      img: couch,
       type: "Individual Therapy",
       top: "30%",
       right: "",
@@ -28,7 +38,7 @@
       id: "individual-info",
     },
     {
-      img: "https://askpsychologicalservices.com/images/a9a1ae111ba39e4862ad62421ae87336.jpg",
+      img: assessment,
       type: "Assessments",
       top: "",
       right: "40%",
@@ -56,7 +66,7 @@
       id: "assessments-info",
     },
     {
-      img: "https://askpsychologicalservices.com/images/b1f68e2dab2cc0da80fb6219efb5afaa.jpg",
+      img: groupChairs,
       type: "Group Therapy",
       top: "10%",
       right: "50%",
@@ -124,16 +134,16 @@
     },
   ];
 
-  function handleAnchorClick (event: any) {
-		event.preventDefault()
-		const link = event.currentTarget as HTMLAnchorElement
-		const anchorId = new URL(link.href).hash.replace('#', '')
-		const anchor = document.getElementById(anchorId)
-		window.scrollTo({
-			top: anchor!.offsetTop,
-			behavior: 'smooth'
-		})
-	}
+  function handleAnchorClick(event: any) {
+    event.preventDefault();
+    const link = event.currentTarget as HTMLAnchorElement;
+    const anchorId = new URL(link.href).hash.replace("#", "");
+    const anchor = document.getElementById(anchorId);
+    window.scrollTo({
+      top: anchor!.offsetTop,
+      behavior: "smooth",
+    });
+  }
 </script>
 
 <div class="services-container">
@@ -232,7 +242,7 @@
     <em>Women’s First Group: Monday, Nov. 6 at 4 PM via Zoom</em>
     <em>Men’s Group Every other Monday at 4 PM Starting January 2024</em>
     <Dots />
-    <h2>Now accepting referrals</h2>
+    <h2>Now Accepting Referrals</h2>
     <Dots />
     <h3>
       PLEASE <a href="/contact">CONTACT US</a> FOR MORE INFORMATION & TO REGISTER
@@ -246,7 +256,7 @@
     grid-template-rows: auto;
     grid-template-columns: 1fr;
     grid-template-areas: "title" "links" "indv" "assessment" "group" "assessment-info" "group-info" "program-info";
-    margin: 2em 8em;
+    margin: 2em 4em;
     gap: 5em;
     scroll-behavior: smooth;
   }
@@ -321,5 +331,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+
+  @media (max-width: 769px) {
+    .services-container {
+      gap: 3em;
+      margin: 1em;
+    }
+
+    .info {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2em;
+    }
   }
 </style>

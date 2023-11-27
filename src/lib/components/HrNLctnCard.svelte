@@ -37,7 +37,7 @@
 
   .info {
     display: flex;
-    color: rgb(62, 4, 69);
+    color: var(--ask-purple);
     background-color: white;
     text-align: center;
     padding: 1em;

@@ -1,31 +1,31 @@
 <script lang="ts">
   import PageTitle from "$lib/components/PageTitle.svelte";
   import HrNLctnCard from "$lib/components/HrNLctnCard.svelte";
-  import type { HoursNLocationInfo } from "$lib/types.js"
+  import type { HoursNLocationInfo } from "$lib/types.js";
 
   const hoursInfoList: HoursNLocationInfo[] = [
     {
       type: "clock",
-      title: "Monday - Friday | 8 AM - 7 PM Saturday | 9 AM - 11 AM"
+      title: "Monday - Friday | 8 AM - 7 PM Saturday | 9 AM - 11 AM",
     },
 
     {
       type: "teleHealth",
-      title: "CONVENIENT TELEHEALTH SERVICES"
+      title: "CONVENIENT TELEHEALTH SERVICES",
     },
     {
       type: "building",
-      title: "85 Macomb Place Suite 102  Mt. Clemens, MI 48043"
+      title: "85 Macomb Place Suite 102  Mt. Clemens, MI 48043",
     },
-  ]
-
+  ];
 </script>
 
 <div class="hours-container">
-  <PageTitle title="HOURS & LOCATION"/>
+  <div class="title"><PageTitle title="HOURS & LOCATION" /></div>
+
   <div class="info-container">
     {#each hoursInfoList as hour}
-      <HrNLctnCard type={hour.type} title={hour.title}/>
+      <HrNLctnCard type={hour.type} title={hour.title} />
     {/each}
   </div>
 </div>
@@ -45,5 +45,15 @@
     gap: 2em;
     justify-content: center;
     font-size: 20px;
+  }
+
+  .title {
+    align-self: flex-start;
+  }
+
+  @media (max-width: 769px) {
+    .title {
+      align-self: center;
+    }
   }
 </style>

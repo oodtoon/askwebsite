@@ -45,11 +45,25 @@
     isDropdownVisible = false;
   }
 
+  function handleDocumentClick(event: MouseEvent) {
+    if (isDropdownVisible) {
+      const target = event.target as HTMLElement;
+      const dropdown = document.querySelector(".dropdown");
+      if (
+        !dropdown?.contains(target) &&
+        !target.classList.contains("menu-btn") &&
+        !target.classList.contains("drop-link")
+      )
+        isDropdownVisible = false;
+    }
+  }
+
   $: if (outerWidth > 769) {
     isDropdownVisible = false;
   }
 </script>
 
+<svelte:document on:click={handleDocumentClick} />
 <svelte:window bind:outerWidth />
 
 <nav>
@@ -58,7 +72,7 @@
       <span><a class="nav-link" href={item.link}>{item.title}</a></span>
     {/each}
   {:else}
-    <button on:click={handleDropdown}>
+    <button on:click={handleDropdown} class="menu-btn">
       {#if !isDropdownVisible}
         <Menu />
       {:else}
@@ -70,8 +84,10 @@
     <Dropdown>
       {#each navItems as item}
         <div class="dropdown">
-          <a class="nav-link" href={item.link} on:click={handleAnchorClick}
-            >{item.title}</a
+          <a
+            class="nav-link drop-link"
+            href={item.link}
+            on:click={handleAnchorClick}>{item.title}</a
           >
         </div>
       {/each}
@@ -90,7 +106,7 @@
 
 <style>
   nav {
-    background-color: rgb(62, 4, 69);
+    background-color: var(--ask-purple);
     display: flex;
     align-items: center;
     width: 100%;
@@ -101,12 +117,10 @@
     background-color: transparent;
     border: transparent;
     margin-left: 2em;
-    cursor: pointer;
   }
 
   .nav-link {
     color: white;
-    cursor: pointer;
     text-decoration: none;
     font-size: 20px;
   }

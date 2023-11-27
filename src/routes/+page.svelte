@@ -44,43 +44,39 @@
   .title-img {
     margin: auto;
     max-width: 300px;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    box-shadow: var(--ask-shadow);
     border-radius: 50% 50% 0 0;
   }
 
   .title {
     margin: auto;
-    color: rgb(62, 4, 69);
+    color: var(--ask-purple);
   }
 
   .content {
     color: white;
-    background-color: rgb(62, 4, 69);
+    background-color: var(--ask-purple);
     font-size: 24px;
     padding: 2em;
     border-radius: 4px;
     text-align: center;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    /* box-shadow: var(--ask-shadow); */
     max-width: 800px;
     margin: auto;
     position: relative;
+    border-color: white;
+    border-style: double;
+    border-width: 20px;
   }
 
-  .content::before {
+  /* .content::before {
     content: "";
     position: absolute;
+    background: transparent;
     top: -30px;
     left: -30px;
     right: 30px;
     bottom: 20px;
     border: 10px solid white;
-  }
+  } */
 </style>

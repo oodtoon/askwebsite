@@ -48,7 +48,7 @@
 
 <style>
   footer {
-    background-color: rgb(62, 4, 69);
+    background-color: var(--ask-purple);
     display: flex;
     align-items: center;
     padding: 1em;
@@ -69,7 +69,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    max-height: 200px;
+    max-height: 100px;
     gap: 0 1em;
   }
 
@@ -77,7 +77,7 @@
     margin: .2em 0;
   }
 
-  @media (max-width: 400px) {
+  @media (max-width: 560px) {
     .footer-info {
       max-height: 400px;
     }

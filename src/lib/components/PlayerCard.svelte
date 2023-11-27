@@ -78,14 +78,10 @@
   .player-info {
     background-color: white;
     text-align: center;
-    color: rgb(62, 4, 69);
+    color: var(--ask-purple);
     padding: 1em 0.5em;
     border-radius: 4px;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    box-shadow: var(--ask-shadow)
   }
 
   .img-container {
@@ -93,11 +89,7 @@
     max-width: 300px;
     aspect-ratio: 1/1;
     border-radius: 50%;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    box-shadow: var(--ask-shadow)
   }
 
   img {
@@ -106,16 +98,12 @@
   }
 
   .title {
-    background-color: rgb(62, 4, 69);
+    background-color: var(--ask-purple);
     color: white;
     padding: 0.5em;
     border-radius: 8px;
     font-weight: 200;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    box-shadow: var(--ask-shadow)
   }
 
   .name {

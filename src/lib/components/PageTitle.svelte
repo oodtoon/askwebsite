@@ -1,6 +1,9 @@
 <script lang="ts">
+  import logo from "$lib/images/AskLogo.png"
   export let title: string;
   let outerWidth: number;
+
+  let imgLogo = "https://askpsychologicalservices.com/images/3cc98553e78333ece2ac284d66c46fbb.png"
 </script>
 
 <svelte:window bind:outerWidth />
@@ -9,7 +12,7 @@
   {#if outerWidth > 769}
     <img
       class="title-img"
-      src="https://askpsychologicalservices.com/images/3cc98553e78333ece2ac284d66c46fbb.png"
+      src={logo}
       alt="ask-logo"
     />
   {/if}
@@ -20,7 +23,7 @@
   {#if outerWidth <= 769}
     <img
       class="title-img"
-      src="https://askpsychologicalservices.com/images/3cc98553e78333ece2ac284d66c46fbb.png"
+      src={logo}
       alt="ask-logo"
     />
   {/if}
@@ -35,8 +38,10 @@
   }
 
   .title-img {
-    height: 100%;
+    width: clamp(100px, 200px, 300px);
+    height: clamp(100px, 200px, 300px);
     border-radius: 50% 50% 0 0;
+    margin: 0;
   }
 
   .title {
@@ -56,14 +61,18 @@
       justify-content: center;
     }
 
+    .title {
+      font-size: 40px;
+    }
+
     .title-img {
-      width: 20%;
+      margin: auto;
     }
   }
 
   @media (max-width: 320px) {
-    .title-img {
-      width: 50%;
+    .title {
+      font-size: 30px;
     }
   }
 </style>

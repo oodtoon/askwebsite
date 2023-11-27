@@ -1,4 +1,17 @@
+:root {
+  --ask-purple: rgb(62, 4, 69);
+  --ask-shadow: 0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
+    2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
+    5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
+    13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+}
+
 body {
   background-color: rgb(220, 214, 223);
   margin: 0;
+}
+
+a,
+button {
+  cursor: pointer;
 }

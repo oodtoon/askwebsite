@@ -1,3 +1,16 @@
+<script lang="ts"> 
+  let outerWidth: number 
+  let width: number
+  
+  $: if (outerWidth > 400) {
+    width=350
+  } else {
+    width = 200
+  }
+  </script>
+  
+<svelte:window bind:outerWidth/>
+
 <svg
   xmlns="http://www.w3.org/2000/svg"
   xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -5,7 +18,7 @@
   preserveAspectRatio="xMidYMid meet"
   version="1.0"
   viewBox="-1.8 -1.7 701.8 171.3"
-  width="350"
+  width={width}
   zoomAndPan="magnify"
   ><g id="change1_1"
     ><path

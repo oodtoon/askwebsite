@@ -45,22 +45,18 @@
     display: flex;
     overflow: hidden;
     border-radius: 50% 50% 4px 4px;
-    border: 2px solid rgb(62, 4, 69);
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    border: 2px solid var(--ask-purple);
+    box-shadow: var(--ask-shadow)
   }
 
   .small {
-    width: 280px;
-    height: 280px;
+    width: clamp(150px, 260px, 290px);
+    height: clamp(150px, 260px, 290px);
   }
 
   .isLarge {
-    width: 300px;
-    height: 300px;
+    width: clamp(150px, 300px, 310px);
+    height: clamp(150px, 300px, 310px);
   }
 
   .img {
@@ -72,17 +68,13 @@
   .info {
     display: flex;
     flex-wrap: wrap;
-    background-color: rgb(62, 4, 69);
+    background-color: var(--ask-purple);
     color: white;
     font-size: 32px;
     padding: 0.5em;
     align-items: center;
     justify-content: center;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    box-shadow: var(--ask-shadow);
   }
 
   .anchor {
@@ -92,7 +84,6 @@
   }
 
   a {
-    cursor: pointer;
     text-decoration: none;
   }
 
@@ -101,5 +92,12 @@
     align-items: center;
     font-size: 24px;
     font-weight: 500;
+  }
+
+  @media (max-width: 320px) {
+    .isLarge {
+      width: clamp(150px, 260px, 290px);
+      height: clamp(150px, 260px, 290px);
+    }
   }
 </style>

@@ -1,5 +1,10 @@
 <script lang="ts">
   import PageTitle from "$lib/components/PageTitle.svelte";
+  import mission from "$lib/images/mission.png"
+  import puzzle from "$lib/images/puzzlepic.png"
+
+  let missImg = "https://askpsychologicalservices.com/images/ce41d754ce7bec92107328b9415db40d.jpg"
+  let puzzImg = "https://askpsychologicalservices.com/images/6121f58e06412d3a40e8430aba52e8cc.jpg"
 </script>
 
 <div class="mission-container">
@@ -8,7 +13,7 @@
   <div class="body-img-container">
     <img
       class="body-img"
-      src={"https://askpsychologicalservices.com/images/6121f58e06412d3a40e8430aba52e8cc.jpg"}
+      src={mission}
       alt="Our mission"
     />
   </div>
@@ -29,7 +34,7 @@
   </div>
 
   <div class="points-container">
-    <div class="background-image"></div>
+    <div class="background-image" style:background-image={`url(${puzzle})`}></div>
     <div class="points">
       <h2>At ASK Psychological Services PLLC, we aim to:</h2>
       <ul>
@@ -80,11 +85,8 @@
   .body-img {
     width: 100%;
     border-radius: 8px;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    box-shadow: var(--ask-shadow);
+
   }
 
   .content {
@@ -107,7 +109,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("https://askpsychologicalservices.com/images/ce41d754ce7bec92107328b9415db40d.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     opacity: 0.2;
@@ -123,6 +124,10 @@
       grid-template-columns: 1fr;
       grid-template-areas: "title" "img" "content" "points";
       margin: 1em;
+    }
+
+    .points-container {
+      padding: 0;
     }
   }
 </style>

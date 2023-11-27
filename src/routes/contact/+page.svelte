@@ -1,17 +1,22 @@
 <script lang="ts">
   import PageTitle from "$lib/components/PageTitle.svelte";
   import ContactTypes from "$lib/components/icons/ContactTypes.svelte";
+  import team from "$lib/images/askTeamAlt.png";
+
+  let outerWidth: number;
+
+  let imgHolder =
+    "https://askpsychologicalservices.com/images/d93bea1563a5721e4aa0bdbc0bb36799.png";
+
 </script>
+
+<svelte:window bind:outerWidth />
 
 <div class="contact-container">
   <PageTitle title="CONTACT US" />
 
   <div class="content-container">
-    <div class="img-container">
-      <img
-        src="https://askpsychologicalservices.com/images/d93bea1563a5721e4aa0bdbc0bb36799.png"
-        alt="ASK Partners"
-      />
+    <div class="img-container" style:background-image={`url(${team})`}>
     </div>
     <div class="info-container">
       <ContactTypes />
@@ -26,7 +31,7 @@
         MT. CLEMENS, MI 48043
         <br />
         P: (248) 733-3907
-        <br />
+        <br/>
         ASKPSYCHOLOGICAL@GMAIL.COM
       </div>
     </div>
@@ -41,19 +46,21 @@
     gap: 2em;
   }
 
-  img {
-    opacity: 0.2;
-    transform: scale(0.8) translate(0, -200px);
-  }
-
   .img-container {
-    overflow: hidden;
+    background-size: contain;
+    background-repeat: no-repeat;
     height: 700px;
+    width: 500px;
+    min-width: 300;
+    min-height: 500;
+    opacity: .4;
   }
 
   .content-container {
+    margin: auto;
     display: flex;
-    width: 100%;
+    justify-items: center;
+    gap: 5em;
   }
 
   .info-container {
@@ -64,16 +71,41 @@
   }
 
   .info {
-    color: rgb(62, 4, 69);
+    color: var(--ask-purple);
     background-color: white;
     font-size: 24px;
     text-align: center;
     padding: 1em;
     border-radius: 8px;
-    box-shadow:
-      0.7px 0.6px 1px rgba(22, 22, 22, 0.5),
-      2.3px 2.1px 3.5px -0.8px rgba(22, 22, 22, 0.5),
-      5.7px 5.2px 8.7px -1.7px rgba(22, 22, 22, 0.5),
-      13.8px 12.7px 21.1px -2.5px rgba(22, 22, 22, 0.5);
+    box-shadow: var(--ask-shadow);
+  }
+
+  @media (max-width: 769px) {
+    .contact-container {
+      margin: 2em 1em;
+    }
+
+    .content-container {
+      flex-wrap: wrap;
+    }
+  }
+
+  @media (max-width: 420px) {
+    .img-container {
+      height: 400px;
+      width: 250px
+    }
+
+    .info {
+      padding: 0.5em;
+      font-size: 20px;
+    }
+  }
+
+  @media (max-width: 350px) {
+    .info {
+      padding: .25em;
+      font-size: 16px;
+    }
   }
 </style>

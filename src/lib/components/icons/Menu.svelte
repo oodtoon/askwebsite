@@ -3,6 +3,7 @@
   width="40"
   height="40"
   viewBox="0 0 24 24"
+  class="menu-btn"
 >
-  <path fill="#FFF" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
+  <path fill="#FFF" d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" class="menu-btn"/>
 </svg>

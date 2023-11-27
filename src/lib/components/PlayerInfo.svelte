@@ -38,7 +38,7 @@
   .player-sheet {
     position: relative;
     padding: 2em 3em;
-    background-color: rgb(62, 4, 69);
+    background-color: var(--ask-purple);
     color: white;
     font-size: 20px;
     margin: 4em 0;

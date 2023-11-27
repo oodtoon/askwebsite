@@ -9,8 +9,9 @@
   .dropdown {
     position: absolute;
     color: white;
-    background-color: rgb(62, 4, 69);
+    background-color: var(--ask-purple);
     top: 7em;
     padding: 1em;
+    box-shadow: var(--ask-shadow);
   }
 </style>
