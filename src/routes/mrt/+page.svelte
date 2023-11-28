@@ -4,6 +4,10 @@
   import Brain from "$lib/components/icons/Brain.svelte";
 
   let outerWidth: number;
+  const date = new Date()
+  const month = date.getMonth() + 1
+  const year = date.getFullYear()
+  const calendlyMonth = year + "-" + month
 </script>
 
 <svelte:window bind:outerWidth />
@@ -38,7 +42,7 @@
       <br />
       <div>
         <a
-          href="https://calendly.com/drgroth/meeting?month=2023-11"
+          href={`https://calendly.com/drgroth/meeting?month=${calendlyMonth}`}
           target="_blank"
         >
           *15- minute pre-screening/assessment | Dr. Karen Groth
